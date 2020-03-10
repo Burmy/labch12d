@@ -1,5 +1,6 @@
 #include "catch.hpp"
 #include "time.h"
+Time::Time() {}
 Time::Time(int hour, int minute)
 {
 	time_in_minutes = hour * 60 + minute;
@@ -10,11 +11,7 @@ int Time::getHours() const
 }
 int Time::getMinutes() const
 {
-	return time_in_minutes % 60;
-}
-int Time::deriveEndTime()
-{
-	return time_in_minutes + 60;
+	return time_in_minutes%60;
 }
 bool Time::compare(Time time)
 {
@@ -56,13 +53,8 @@ TEST_CASE("Time")
 		if min is 2 except accessor fucntion to return 2
 		@verbinclude results TimeGetMinutes
 		*/
-		Time t4(45);
-		CHECK(t4.getMinutes() == 45);
-	}
-	SECTION("EndTime")
-	{
-		/**
-		*/
+		Time t4(2);
+		CHECK(t4.getMinutes() == 2);
 	}
 	SECTION("compare")
 	{
