@@ -1,5 +1,7 @@
 #include "catch.hpp"
 #include "date.h"
+Date::Date() {}
+
 Date::Date(int months, int days)
 {
 	number_of_days = months * 30 + days;
