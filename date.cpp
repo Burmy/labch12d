@@ -57,9 +57,9 @@ TEST_CASE("Date")
 	}
 	SECTION("compare")
 	{
-		Date d1(12);
+		Date d1(9);
 		CHECK(d1.getMonths() == 9);
-		Date d2(5);
+		Date d2(4);
 		CHECK(d2.getMonths() == 4);
 		CHECK(d1.compare(d2)==true);
 	}
