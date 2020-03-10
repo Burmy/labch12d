@@ -14,15 +14,14 @@ int main()
 
 	//Initialize empty vector of Appointments
 	std::vector<Appointment> book;
-	while (!quit)
+		
+		while (!quit)
 	{
 		std::cout << "Would you like to make an appointment, print current appointments on a given day, or quit? (Enter 1, 2, or 3): " << std::endl;
 		std::cout << "1: Add appointment" << std::endl;
 		std::cout << "2: Print appointments" << std::endl;
 		std::cout << "3: Quit" << std::endl;
-		std::cin >> option;
-		
-		while (std::cin.fail() || option < 1 || option > 3)
+		std::cin >> option;while (std::cin.fail() || option < 1 || option > 3)
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -30,8 +29,7 @@ int main()
 			std::cout << "Invalid input. Please enter 1, 2, or 3: " << std::endl;
 			std::cin >> option;
 		}
-
-		if (option == 1)
+	if (option == 1)
 		{
 			AddAppointment(book);
 		}
@@ -46,11 +44,8 @@ int main()
 			quit = true;
 		}
 	}
-
-	system("pause");
-	return 0;
+return 0;
 }
-
 void AddAppointment(std::vector<Appointment> &book)
 {
 	std::string description;
@@ -67,9 +62,9 @@ void AddAppointment(std::vector<Appointment> &book)
 
 	std::cout << "What time is your appointment? (HH:MM): ";
 	std::cin >> startHour >> c >> startMinute;
-
 	//Convert MM/DD to integer
 	Date date = Date(month, day);
+
 	//Convert HH:MM to integer
 	Time time = Time(startHour, startMinute);
 
@@ -82,6 +77,7 @@ void AddAppointment(std::vector<Appointment> &book)
 	}
 
 }
+
 bool addToAppointmentBook(std::vector<Appointment> &book, Appointment appointment)
 {
 	if (book.empty())
@@ -97,6 +93,7 @@ bool addToAppointmentBook(std::vector<Appointment> &book, Appointment appointmen
 	//for testing
 	return fakeBinarySearchInsert(book, appointment);
 }
+
 void printAppointments(std::vector<Appointment> book)
 {
 	for (std::size_t i = 0; i < book.size(); i++)
