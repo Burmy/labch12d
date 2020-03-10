@@ -1,30 +1,36 @@
 class Date
 {
+private:
+	int number_of_days;
+
 public:
-/**
-Constructor
-Constructs a time of day
- @param months
- @param days
-*/
-	Date(int months=0, int days=0);
 	/**
-	accessor function to recieve Date
-	@return date
+	Constructor
+	Initializes Date object
+	*/
+	Date();
+	/**
+	Constructor
+	Constructs month and day
+	@param month
+	@param day
+	*/
+	Date(int month=0, int day=0);
+	/**
+	Accessor function to receive months
+	@return months
 	*/
 	int getMonths() const;
 	/**
-	accessor function to recieve Months
-	@return month
+	Accessor function to receive days
+	@return days
 	*/
 	int getDays() const;
 	/**
-	boolean fiunction to compare 2 times
-	@param time - decide ifthis time is greater than the currant object
+	Boolean function to compare 2 dates
+	@param Date value of date being compared to stored object date
 	@return true if greater
 	*/
 	bool compare(Date);
-	
-private:
-	int number_of_days;
+
 };
