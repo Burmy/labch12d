@@ -2,27 +2,29 @@ class Time
 {
 public:
 /**
-Constructor
-Constructs a time of day
-@param hour
-@param min
-*/
-	Time(int hour=0, int min=0);
+	Constructor
+	Initializes Time object
+	*/
+	Time();
 	/**
-	accessor function to recieve hours
+	Constructor
+	Constructs time of day
+	@param hours
+	@param minutes
+	*/
+	Time(int hour=0, int minute=0);
+	/**
+	Accessor function to receive hours
 	@return hours
 	*/
 	int getHours() const;
 	/**
-	accessor function to recieve minutes
+	Accessor function to receive minutes
 	@return minutes
 	*/
 	int getMinutes() const;
-	
-	int deriveEndTime();
 	/**
-	boolean fiunction to compare 2 times
-	@param time - decide ifthis time is greater than the currant object
+	Boolean function to compare 2 times
 	@return true if greater
 	*/
 	bool compare(Time);
